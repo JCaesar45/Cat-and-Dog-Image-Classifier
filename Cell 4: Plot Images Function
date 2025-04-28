@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+def plotImages(images, probabilities=None):
+    plt.figure(figsize=(10, 10))
+    for i in range(5):
+        plt.subplot(1, 5, i + 1)
+        plt.imshow(images[i])
+        if probabilities is not None:
+            plt.title(f"{'Dog' if probabilities[i] > 0.5 else 'Cat'}: {probabilities[i]*100:.2f}%")
+        plt.axis('off')
+    plt.show()
+
+# Plot random training images
+sample_images, _ = next(train_generator)  # Get a batch of images
+plotImages(sample_images[:5])  # Display 5 images
