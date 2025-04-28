@@ -1,0 +1,7 @@
+history = model.fit(
+    train_data_gen,
+    steps_per_epoch=train_generator.samples // BATCH_SIZE,
+    epochs=15,
+    validation_data=validation_generator,
+    validation_steps=validation_generator.samples // BATCH_SIZE
+)
